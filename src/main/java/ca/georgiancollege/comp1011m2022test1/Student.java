@@ -10,19 +10,19 @@ public class Student {
     private String Telephone;
     private String Address;
     private String Province;
-    private String AverageGrade;
+    private int AverageGrade;
     private String Major;
 
 // Constructors
-    public Student(int studentNumber, String firstName, String lastName, String telephone, String address, String province, String averageGrade, String major) {
-        StudentNumber = studentNumber;
-        FirstName = firstName;
-        LastName = lastName;
-        Telephone = telephone;
-        Address = address;
-        Province = province;
-        AverageGrade = averageGrade;
-        Major = major;
+    public Student(int studentNumber, String firstName, String lastName, String telephone, String address, String province, int averageGrade, String major) {
+       setStudentNumber(studentNumber);
+        setFirstName(firstName);
+        setLastName(lastName);
+        setTelephone(telephone);
+        setAddress(address);
+        setProvince(province);
+        setAverageGrade(averageGrade);
+        setMajor(major);
     }
 
     //Getters and Setters
@@ -32,7 +32,7 @@ public class Student {
     }
 
     public void setStudentNumber(int studentNumber) {
-        StudentNumber = studentNumber;
+        this.StudentNumber = studentNumber;
     }
 
     public String getFirstName() {
@@ -40,7 +40,7 @@ public class Student {
     }
 
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.FirstName = firstName;
     }
 
     public String getLastName() {
@@ -48,7 +48,7 @@ public class Student {
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.LastName = lastName;
     }
 
     public String getTelephone() {
@@ -56,7 +56,7 @@ public class Student {
     }
 
     public void setTelephone(String telephone) {
-        Telephone = telephone;
+        this.Telephone = telephone;
     }
 
     public String getAddress() {
@@ -64,7 +64,7 @@ public class Student {
     }
 
     public void setAddress(String address) {
-        Address = address;
+        this.Address = address;
     }
 
     public String getProvince() {
@@ -72,15 +72,15 @@ public class Student {
     }
 
     public void setProvince(String province) {
-        Province = province;
+        this.Province = province;
     }
 
-    public String getAverageGrade() {
+    public int getAverageGrade() {
         return AverageGrade;
     }
 
-    public void setAverageGrade(String averageGrade) {
-        AverageGrade = averageGrade;
+    public void setAverageGrade(int averageGrade) {
+        this.AverageGrade = averageGrade;
     }
 
     public String getMajor() {
@@ -88,8 +88,10 @@ public class Student {
     }
 
     public void setMajor(String major) {
-        Major = major;
+        this.Major = major;
     }
+
+
 }
 
 

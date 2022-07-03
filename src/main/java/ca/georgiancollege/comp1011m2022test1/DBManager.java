@@ -36,12 +36,12 @@ public class DBManager
      * and returns an ArrayList of Vector2D type
      * @return
      */
-    public ArrayList<Student> readVectorTable()
+    public ArrayList<Student> readStudentTable()
     {
         // Instantiates an ArrayList collection of type Vector2D (empty container)
-        ArrayList<Student> vectors = new ArrayList<Student>();
+        ArrayList<Student> students = new ArrayList<Student>();
 
-        String sql = "SELECT vectors.vectorID, X, Y FROM vectors GROUP BY vectors.vectorID";
+        String sql = "SELECT students.studentNum, firstName, lastName, homeAddress, telephone, province, avgGrade, major FROM students";
 
         try
                 (
@@ -54,13 +54,17 @@ public class DBManager
             while(resultSet.next())
             {
                 // deserialize (decode) the data from database table
-                int vectorID = resultSet.getInt("vectorID");
-                float X = resultSet.getFloat("X");
-                float Y = resultSet.getFloat("Y");
+                int StudentNumber = resultSet.getInt("studentNum");
+                String FirstName = resultSet.getString("firstName");
+                String LastName = resultSet.getString("lastName");
+                String HomeAddress = resultSet.getString("homeAddress");
+                String Telephone = resultSet.getString("telephone");
+                String Province = resultSet.getString("province");
+                int AverageGrade = resultSet.getInt("avgGrade");
+                String Major = resultSet.getString("major");
 
-                // create an anonymous Vector2D object with the data from the database
-                // then add the new Vector2D object to the vectors ArrayList
-                //vectors.add( new Student(vectorId, X, Y));
+                students.add( new Student(StudentNumber, FirstName, LastName, HomeAddress, Telephone, Province, AverageGrade, Major));
+
             }
         }
         catch(Exception exception)
@@ -68,37 +72,11 @@ public class DBManager
             exception.printStackTrace();
         }
 
-        return vectors;
+        return students;
     }
 
-    /**
-     * This method returns the Bar Chart Data from the Database
-     * @return
-     */
-    public XYChart.Series<String, Float> getMagnitude()
-    {
-        // Step 1. Create a Series
-        XYChart.Series<String, Float> magnitudes = new XYChart.Series<>();
-        magnitudes.setName("2022");
 
-        // Step 2. Get the Data from the Database
-        ArrayList<Student> vectors = readVectorTable();
 
-        // mock data example
-        /*
-        magnitudes.getData().add(new XYChart.Data<>("0, 0", 0.0f));
-        magnitudes.getData().add(new XYChart.Data<>("10, 20", 10.0f));
-        magnitudes.getData().add(new XYChart.Data<>("30, 40", 20.0f));
-        magnitudes.getData().add(new XYChart.Data<>("50, 80", 30.0f));
-         */
 
-        // Step 3. For Each Vector in the Data...Loop and add it to the Series
-        /*for (var vector : vectors)
-        {
-            var chartData = new XYChart.Data<>(vector.toOneDecimalString(), vector.getMagnitude());
-            magnitudes.getData().add(chartData);
-        }
-*/
-        return magnitudes;
-    }
+
 }
