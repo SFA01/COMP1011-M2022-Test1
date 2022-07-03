@@ -1,4 +1,4 @@
-package ca.georgiancollege.comp1011m2022test;
+package ca.georgiancollege.comp1011m2022test1;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
