@@ -13,7 +13,7 @@ public class Student {
     private int AverageGrade;
     private String Major;
 
-// Constructors
+    //Here I added the class that have a constructor that validates all of the arguments, get and set methods for part 1
     public Student(int studentNumber, String firstName, String lastName, String telephone, String address, String province, int averageGrade, String major) {
        setStudentNumber(studentNumber);
         setFirstName(firstName);
@@ -25,32 +25,62 @@ public class Student {
         setMajor(major);
     }
 
-    //Getters and Setters
+    //Getters and Setters for part 1
 
     public int getStudentNumber() {
         return StudentNumber;
     }
 
     public void setStudentNumber(int studentNumber) {
-        this.StudentNumber = studentNumber;
+
+        //Here I am doing the first validation of part 1
+        if(studentNumber >= 200034000){
+            this.StudentNumber = studentNumber;
+        }
+        else {
+            throw new IllegalArgumentException("Please, enter a valid student number");
+
+        }
     }
 
+    //Here I am doing the second validation for part 1
     public String getFirstName() {
         return FirstName;
     }
 
     public void setFirstName(String firstName) {
-        this.FirstName = firstName;
-    }
 
+        if(firstName.length() > 1) {
+            this.FirstName = firstName;
+
+        }
+            else{
+                throw new IllegalArgumentException("Please, make sure it is more than one character");
+            }
+        }
+
+
+
+//Here I am doing the 3 validation for the part 1
     public String getLastName() {
         return LastName;
     }
 
     public void setLastName(String lastName) {
-        this.LastName = lastName;
+
+
+        if(lastName.length() > 1){
+            this.LastName = lastName;
+        }
+
+        else{
+            throw new IllegalArgumentException("Please, make sure it is more than one character");
+
+        }
     }
 
+
+    //Here is the 4 validation for part 1
     public String getTelephone() {
         return Telephone;
     }
@@ -59,36 +89,71 @@ public class Student {
         this.Telephone = telephone;
     }
 
+    //Here I am doing the 5 validation for part 1
     public String getAddress() {
         return Address;
     }
 
     public void setAddress(String address) {
-        this.Address = address;
+
+        if(address.length() > 6){
+            this.Address = address;
+        }
+
+        else{
+            throw new IllegalArgumentException("Please, make sure it is more than six character");
+        }
     }
 
+    //Here I am doing the 6 validation for part 1
     public String getProvince() {
         return Province;
     }
 
     public void setProvince(String province) {
-        this.Province = province;
+
+
+      // if((province = "AB"), (province = "BC"), (province = "MB"), (province = "NB"), (province = "NL"), (province = "NS"), (province = "NT"), (province = "NU"), (province = "ON"), (province = "PE"), (province = "QC"), (province = "SK"), (province = "YT")){
+            this.Province = province;
+      //  }
+
+        //else{
+           // throw new IllegalArgumentException("Please, enter a province that it is on the list");
+       // }
     }
 
+    //Here I am doing the 7 validation for part 1
     public int getAverageGrade() {
         return AverageGrade;
     }
 
     public void setAverageGrade(int averageGrade) {
-        this.AverageGrade = averageGrade;
+
+
+        if(averageGrade < 100 && averageGrade > 0){
+            this.AverageGrade = averageGrade;
+        }
+
+        else{
+            throw new IllegalArgumentException("Please, enter a average grade");
+        }
     }
 
+    //Here I am doing the 8 validation for part 1
     public String getMajor() {
         return Major;
     }
 
     public void setMajor(String major) {
         this.Major = major;
+
+        if(major.length() > 5){
+            this.Major = major;
+        }
+
+        else{
+            throw new IllegalArgumentException("Please, enter major more than 5");
+        }
     }
 
 

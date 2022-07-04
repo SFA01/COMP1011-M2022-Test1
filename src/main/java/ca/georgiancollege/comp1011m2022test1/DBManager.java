@@ -28,7 +28,7 @@ public class DBManager
 
     // private instance member variables
     private String m_user = "root";
-    private String m_password = "";
+    private String m_password = " ";
     private String m_connectURL = "jdbc:mysql://localhost:3306/javatest";
 
     /**
