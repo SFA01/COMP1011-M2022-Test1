@@ -13,6 +13,7 @@ public class StudentViewController implements Initializable {
     @FXML
     private TableView<Student> tableView;
 
+    //Here are my columns in the ui
     @FXML
     private TableColumn<Student, Integer> studentNumCol;
 
@@ -53,6 +54,7 @@ public class StudentViewController implements Initializable {
     private void applyFilter()  {
     }
 
+    //This method is to put values into the database
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         areaCodeComboBox.getItems().add("All");
